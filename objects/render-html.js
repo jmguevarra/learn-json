@@ -19,6 +19,7 @@ function displayUsers(users, addToTag, position = 'afterbegin'){
     /** Proceed to main goal */
     let htmlRender = '';
 
+    //new Format of looping
     users.forEach(function(user, index){
         htmlRender += `
         <div class="user user-${index}">
@@ -38,6 +39,29 @@ function displayUsers(users, addToTag, position = 'afterbegin'){
         </div>
         `;
     });
+
+    //Old Format of looping using for loop
+    // for(let i = 0; i < users.length; i++){
+    //    // console.log(users[i]);  All  user object
+    //     htmlRender += `
+    //         <div class="user user-${i}">
+    //             <img src="${users[i].picture['large']}">
+    //             <div class="user-info">
+    //                 <h3 clas="user-name">${users[i].name["title"]}  ${users[i].name["first"]} ${users[i].name["last"]}</h3>
+    //                 <ul class="personal-detail">
+    //                     <li class="gender">${users[i].gender}</li>
+    //                     <li class="age">${users[i].registered["age"]}</li>
+    //                     <li class="phone">${users[i].phone}</li>
+    //                     <li class="email">${users[i].email}</li>
+    //                     <li class="address">
+    //                     ${users[i].location.street['number']} ${users[i].location.street['name']} St. ${users[i].location['city']} City, ${users[i].location['postcode']} ${users[i].location['state']}, ${users[i].location['country']}
+    //                     </li>
+    //                 </ul>
+    //             </div>
+    //         </div>
+    //     `;
+    // }
+
 
     addToTag.insertAdjacentHTML(position, htmlRender);
 }
