@@ -4,6 +4,7 @@
  */
 const randomUsers = 'https://api.npoint.io/cdf5be73d8eee19e21bb';
 
+/** I created a function same like fetch function that calling data from XMLHttpRequest */
 const loadUsers = function(url, callback = function(){}){
     if( url == null ){ return; } 
 
